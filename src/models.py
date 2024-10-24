@@ -49,7 +49,7 @@ class Stats(BaseModel):
     players_used: int = Field(
         validation_alias="players used", serialization_alias="playerUsed"
     )
-    odds: str | float
+    odds: str | float | None = Field(default=None)
 
     @field_validator("avg_loss_margin", "avg_win_margin")
     @classmethod
