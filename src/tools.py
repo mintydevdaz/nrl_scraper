@@ -19,7 +19,7 @@ class File:
 def logger(filepath: str) -> None:
     logging.basicConfig(
         filename=filepath,
-        level=logging.INFO,
+        level=logging.WARNING,
         format="%(asctime)s - %(levelname)s | %(message)s",
         datefmt="%d-%b-%y %H:%M:%S",
     )
