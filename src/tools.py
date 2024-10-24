@@ -1,24 +1,31 @@
 import logging
+import tomllib
 from pathlib import Path
 
 
 class File:
     @staticmethod
-    def path(folder_name: str) -> str:
+    def path(route: str) -> str:
         # Point to specified folder within project
-        directory = Path().absolute().joinpath(folder_name)
+        f = Path().absolute().joinpath(route)
 
-        if directory.exists():
-            return str(directory)
+        if f.exists():
+            return str(f)
 
-        msg = f"The specified path '{directory}' does not exist!"
+        msg = f"The specified path '{f}' does not exist!"
         raise FileNotFoundError(msg)
 
 
-def logger(directory: str, filename: str = "app.log") -> None:
+def logger(filepath: str) -> None:
     logging.basicConfig(
-        filename=f"{directory}/{filename}",
+        filename=filepath,
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s | %(message)s",
         datefmt="%d-%b-%y %H:%M:%S",
     )
+
+
+def load_env(filepath: str) -> dict:
+    with open(filepath, "rb") as f:
+        data = tomllib.load(f)
+    return data
