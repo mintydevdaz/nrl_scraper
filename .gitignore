@@ -12,3 +12,4 @@ wheels/
 # Local
 .DS_Store
 .vscode
+app.log
