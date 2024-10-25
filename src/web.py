@@ -7,7 +7,7 @@ class Client:
     def __init__(self, headers: dict[str, str] | None = None) -> None:
         self.session = httpx.AsyncClient(headers=headers)
 
-    async def get(self, url: str):
+    async def get(self, url: str, index: int | None = None):
         try:
             response = await self.session.get(url)
             response.raise_for_status()
@@ -22,6 +22,8 @@ class Client:
             return None
 
         else:
+            if index:
+                print(f"- {index}. {url}")
             return response
 
     async def close(self) -> None:
