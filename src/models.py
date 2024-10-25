@@ -1,6 +1,18 @@
 from pydantic import BaseModel, Field, field_validator
 
 
+class PlayerModel(BaseModel):
+    name: str = Field(serialization_alias="fullName")
+    family_name: str = Field(serialization_alias="familyName")
+    given_name: str = Field(serialization_alias="givenName")
+    url: str
+    birth_date: str = Field(serialization_alias="birthDate")
+    birth_place: str = Field(serialization_alias="birthPlace")
+    height: float = Field(serialization_alias="heightCM")
+    weight: float = Field(serialization_alias="weightKG")
+    role: str
+
+
 # --- LADDER CLASSES ---
 class Stats(BaseModel):
     played: int
