@@ -16,7 +16,7 @@ Arg options: **players, ladders, team_stats**.
 python main.py players
 ```
 
-Output is automatically saved (in JSON) to **~/nrl_scraper/data**.
+Output is automatically saved (in JSON) to **~/nrl_scraper/data**. Modify key values in **env.toml** to adjust output (see table below for info about ids).
 
 ### Players
 
