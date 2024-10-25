@@ -1,9 +1,8 @@
 import asyncio
 import sys
 
-import players
-from src import ladder, team_stats
-from src.tools import File, logger, load_env, save_to_json
+from src import ladder, players, team_stats
+from src.tools import File, load_env, logger, save_to_json
 
 
 def parse_args(args: list[str]) -> str:
@@ -24,16 +23,16 @@ def parse_args(args: list[str]) -> str:
 async def main():
     arg: str = parse_args(sys.argv)
     env: dict = load_env(File.path("env.toml"))
-    
+
     if arg == "ladder":
         data = ladder.get(env)
-    
+
     elif arg == "team_stats":
         data = await team_stats.get(env)
-    
+
     elif arg == "players":
         data = await players.get(env)
-    
+
     # Output to file
     if data:
         route: str = File.path("data")
