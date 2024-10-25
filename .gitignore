@@ -13,3 +13,6 @@ wheels/
 .DS_Store
 .vscode
 app.log
+data/ladder.json
+data/players.json
+data/teamStats.json
