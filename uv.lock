@@ -49,6 +49,12 @@ wheels = [
 ]
 
 [[package]]
+name = "chompjs"
+version = "1.3.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/05/aa/19e20c5157bcb76f22395143d9a26b33e82d5aff37e25f2feef259f13131/chompjs-1.3.0.tar.gz", hash = "sha256:8ac0b31755e939348fb2af1cc01c357db50c854fa3d506ce79218fc15f056868", size = 16811 }
+
+[[package]]
 name = "h11"
 version = "0.14.0"
 source = { registry = "https://pypi.org/simple" }
@@ -101,6 +107,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "aiometer" },
+    { name = "chompjs" },
     { name = "httpx" },
     { name = "pydantic" },
     { name = "selectolax" },
@@ -109,6 +116,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "aiometer", specifier = ">=0.5.0" },
+    { name = "chompjs", specifier = ">=1.3.0" },
     { name = "httpx", specifier = ">=0.27.2" },
     { name = "pydantic", specifier = ">=2.9.2" },
     { name = "selectolax", specifier = ">=0.3.24" },
